@@ -53,9 +53,9 @@ app.listen(process.env["PORT"] || 3002, () => console.log("Server started"))
    //...
    export const api = remultExpress({
      //...
-     dataProvider: createPostgresConnection({
-       connectionString: process.env["DATABASE_URL"] || "your connection string"
-     })
+     dataProvider: !process.env["DATABASE_URL"] ? undefined :  createPostgresDataProvider({
+    connectionString: process.env["DATABASE_URL"]
+  })
      //...
    })
    ```
