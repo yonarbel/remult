@@ -70,20 +70,20 @@ For a complete list of supported field types, see the [Field Types](../../docs/f
 
 Now that the `Task` entity is defined, we can start using the REST API to query and add a tasks.
 
-1. Open a browser with the url: [http://localhost:3002/api/tasks](http://localhost:3002/api/tasks), and you'll see that you get an empty array.
+1. Open a browser with the url: [http://localhost:5173/api/tasks](http://localhost:5173/api/tasks), and you'll see that you get an empty array.
 
 2. Use `curl` to `POST` a new task - *Clean car*.
 
 ```sh
-curl http://localhost:3002/api/tasks -d "{\"title\": \"Clean car\"}" -H "Content-Type: application/json"
+curl http://localhost:5173/api/tasks -d "{\"title\": \"Clean car\"}" -H "Content-Type: application/json"
 ```
 
-3. Refresh the browser for the url: [http://localhost:3002/api/tasks](http://localhost:3002/api/tasks) and see that the array now contains one item.
+3. Refresh the browser for the url: [http://localhost:5173/api/tasks](http://localhost:5173/api/tasks) and see that the array now contains one item.
 
 4. Use `curl` to `POST` a few more tasks:
 
 ```sh
-curl http://localhost:3002/api/tasks -d "[{\"title\": \"Read a book\"},{\"title\": \"Take a nap\", \"completed\":true },{\"title\": \"Pay bills\"},{\"title\": \"Do laundry\"}]" -H "Content-Type: application/json"
+curl http://localhost:5173/api/tasks -d "[{\"title\": \"Read a book\"},{\"title\": \"Take a nap\", \"completed\":true },{\"title\": \"Pay bills\"},{\"title\": \"Do laundry\"}]" -H "Content-Type: application/json"
 ```
 - Note that the `POST` endpoint can accept a single `Task` or an array of `Task`s.
 
